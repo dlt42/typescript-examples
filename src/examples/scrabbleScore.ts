@@ -15,12 +15,14 @@ Object.keys(tileSets).forEach((key) =>
 );
 
 const score = (word: string | undefined | null): number =>
-  !word
-    ? 0
-    : word
-      .toUpperCase()
-      .replace(/[^A-Z]/gi, ``)
-      .split(``)
-      .reduce((total, char) => total + tiles[char], 0);
+  checkAndCalculateScore(word?.toUpperCase());
+
+const isValid = (word: string | undefined | null): word is string =>
+  !word || word.replace(/[^A-Z]/gi, ``) !== word ? false : true;
+
+const checkAndCalculateScore = (word: string | undefined | null): number =>
+  isValid(word)
+    ? word.split(``).reduce((total, char) => total + tiles[char], 0)
+    : 0;
 
 export default score;

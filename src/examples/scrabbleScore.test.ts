@@ -11,8 +11,8 @@ describe(`Scrabble`, () => {
     expect(score(`quirky`)).toEqual(22));
   it(`scores case insensitive words`, () =>
     expect(score(`OXYPHENBUTAZONE`)).toEqual(41));
-  it(`ignores spaces when scoring a word`, () =>
-    expect(score(` quirky `)).toEqual(22));
-  it(`ignores case when scoring a word`, () =>
-    expect(score(` quIRky `)).toEqual(22));
+  it(`scores 0 if word contains spaces`, () =>
+    expect(score(` quirky `)).toEqual(0));
+  it(`ignores mixed case when scoring a word`, () =>
+    expect(score(`quIRky`)).toEqual(22));
 });
