@@ -1,6 +1,6 @@
-import { describe, expect, test } from 'vitest';
-import { DataType, Query, QueryConditions } from './query.types.js';
-import { runQuery } from './query.js';
+import { describe, expect, test } from "vitest";
+import { DataType, Query, QueryConditions } from "./query.types.js";
+import { runQuery } from "./query.js";
 
 describe(`runQuery`, () => {
   const conditions: QueryConditions<DataType> = {

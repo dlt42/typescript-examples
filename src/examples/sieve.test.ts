@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
-import { primes } from './sieve.js';
+import { describe, expect, it } from "vitest";
+import { primes } from "./sieve.js";
 
 describe(`Sieve`, () => {
   it(`no primes under two`, () => {
