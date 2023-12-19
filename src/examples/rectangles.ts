@@ -103,6 +103,13 @@ const processRow = (
 
 /**
  * Currently does not work for image3
+ * 
+ * Need to add a second step to check that the pattern for each Indexes entry (first and last index) is 
+ * contiguous across each inclusive row within the image. If not the Indexes entry should be split.
+ * 
+ * Or
+ * 
+ * Update the logic in processRow
  */
 export const getCoordinatesV2 = (image: number[][]): Indexes[] | null => {
   let found: Indexes[] = [];
